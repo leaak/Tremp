@@ -24,7 +24,7 @@ Please visit our wiki for furthur project info:
 ### Project Documents
 - [Project Idea](docs/idea.pdf) ([Presentation](docs/idea-slides.pdf))
 - [Project Inception](../../wiki/inception)
-- [Software Requirements Specification](../../wiki/srs)
+- [Software Requirements Specification](https://www.dropbox.com/home?d=1&preview=%D7%9E%D7%A1%D7%9E%D7%9A+%D7%93%D7%A8%D7%99%D7%A9%D7%95%D7%AA+(1).docx)
 - [Software Design Specification](../../wiki/sds)
 
 ### Iteration Pages
