@@ -25,10 +25,10 @@ Please visit our wiki for furthur project info:
 - [Project Idea](docs/idea.pdf) ([Presentation](docs/idea-slides.pdf))
 - [Project Inception](../../wiki/inception)
 - [Software Requirements Specification](https://www.dropbox.com/home?d=1&preview=%D7%9E%D7%A1%D7%9E%D7%9A+%D7%93%D7%A8%D7%99%D7%A9%D7%95%D7%AA+(1).docx)
-- [Software Design Specification](../../wiki/sds)
+- [Software Design Specification](../../wiki/SDS---Software-Design-Specification)
 
 ### Iteration Pages
-- [Iteration 0 - ZFR](../../wiki/iter0-zfr)
+- [Iteration 0 - ZFR](../../wiki/Iteration0-zfr)
 - [Iteration 1 - MVP]()
 - [Iteration 2 - Feature X]()
 - [Iteration 3 - Feature Y]()
