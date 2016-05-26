@@ -28,7 +28,7 @@ Please visit our wiki for furthur project info:
 - [Software Design Specification](../../wiki/SDS---Software-Design-Specification)
 
 ### Iteration Pages
-- [Iteration 0 - ZFR](../../wiki/Iteration0-zfr)
+- [Iteration 0 - ZFR](../../wiki/Iteration_0-–ZFR)
 - [Iteration 1 - MVP]()
 - [Iteration 2 - Feature X]()
 - [Iteration 3 - Feature Y]()
