@@ -1,0 +1,245 @@
+﻿<div style="background-color: black; position: absolute; z-index: 100; height: 400px; width: 100%; opacity: 0.8" ng-show="uc.isAsign==false">
+    <div class="modal-content1">
+
+        <div class="register" ng-show="uc.showRegister==true">
+            <h6 class="modal-title font header-font">הרשמות</h6>
+            <div class="form-group">
+                <input type="text" class="form-control  font detailsInput" placeholder="שם" ng-model="uc.user.fullname" ng-required="true" />
+                <label class="error" ng-show="error1">{{error1}}</label>
+                <input type="text" class="form-control  font detailsInput" placeholder="דוא''ל" ng-model="uc.user.email" ng-required />
+                <input type="text" class="form-control  font detailsInput" placeholder="נייד" ng-model="uc.user.sms" ng-required />
+                <label class="error" ng-show="error2">{{error2}}</label>
+                <input type="text" class="form-control  font detailsInput" placeholder="סיסמא" ng-required ng-model="uc.user.password" />
+            </div>
+            <div class="">
+                <button type="button" class="form-control  font btn btn-default" ng-click="uc.login()">הרשם</button>
+            </div>
+            <a ng-click="uc.showRegister=false">חשבון קיים</a>
+        </div>
+
+        <div class="sign-in" ng-show="uc.showRegister==false">
+            <h6 class="modal-title  font header-font">התחברות</h6>
+            <div class="form-group ">
+                <input type="password" class="form-control  font detailsInput" placeholder="סיסמא" ng-required="true" ng-model="uc.password" />
+                <label class="error" ng-show="errorReg">{{errorReg}}</label>
+
+            </div>
+            <div class="">
+                <button type="button" class="form-control  font btn btn-default" data-dismiss="modal" ng-click="uc.registering()">התחבר</button>
+            </div>
+            <a ng-click="uc.showRegister=true">פעם ראשונה במערכת?</a>
+        </div>
+    </div>
+</div>
+<form style="height: 100%; width: 100%; position: relative" name="giveForm" dir="rtl" ng-init="uc.setmessages() ">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script src="../../../Content/themes/moment/bootstrap-datetimepicker.min.js"></script>
+    <link href="../../../Content/themes/moment/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="../../../Content/themes/style/animate.css" rel="stylesheet" />
+    <style>
+        #pac-input, #pac-input1 {
+            background-color: #fff;
+            font-family: Arial;
+            font-size: 15px;
+            font-weight: 300;
+            text-overflow: ellipsis;
+            margin-bottom: 4px;
+            margin-right: 2px !important;
+        }
+
+            #pac-input:focus {
+                border-color: #4d90fe;
+            }
+
+            #pac-input1:focus {
+                border-color: #4d90fe;
+            }
+
+        .datetimepicker {
+            left: 15px !important;
+            top: 40%;
+            height: 210px !important;
+            width: 170px !important;
+            font-size: xx-small;
+        }
+
+        .suggbtn {
+            font-size: 15px !important;
+            color: #3dba13 !important;
+            border: solid !important;
+            border-color: #b27eb6 !important;
+            text-align: center;
+            font-weight: bolder;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        $(document).on('click', '.panel-heading span.clickable', function (e) {
+            var $this = $(this);
+            if (!$this.hasClass('panel-collapsed')) {
+                $this.parents('.panel').find('.panel-body').slideUp();
+                $this.addClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+            } else {
+                $this.parents('.panel').find('.panel-body').slideDown();
+                $this.removeClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            }
+        });
+        $(document).on('click', '.panel div.clickable', function (e) {
+            var $this = $(this);
+            if (!$this.hasClass('panel-collapsed')) {
+                $this.parents('.panel').find('.panel-body').slideUp();
+                $this.addClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+            } else {
+                $this.parents('.panel').find('.panel-body').slideDown();
+                $this.removeClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            }
+        });
+        //google
+        function mapsinit() {
+            initAutocomplete();
+            initAutocomplete1();
+            initMap();
+        }
+        function initAutocomplete() {
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input);
+            var markers = [];
+
+            searchBox.addListener('places_changed', function () {
+                var places = searchBox.getPlaces();
+                var str = places[0].name + "#" + places[0].geometry.location.lat() + "#" + places[0].geometry.location.lng();
+                document.getElementById('valueLocTo').value = str;
+                if (places.length == 0) {
+                    return;
+                }
+            });
+        }
+        //------------------------------------
+        function initAutocomplete1() {
+
+
+            var input1 = document.getElementById('pac-input1');
+            var searchBox1 = new google.maps.places.SearchBox(input1);
+            var markers1 = [];
+
+            searchBox1.addListener('places_changed', function () {
+                var places1 = searchBox1.getPlaces();
+                var str = places1[0].name + "#" + places1[0].geometry.location.lat() + "#" + places1[0].geometry.location.lng();
+                document.getElementById('valueLocFrom').value = str;
+                if (places1.length == 0) {
+                    return;
+                }
+            });
+        }
+        //========================way=====================
+        var directionsDisplay;
+        var directionsService;
+        var markerArray;
+        var stepDisplay;
+        var map;
+        function onChangeHandler() {
+            alert("onChangeHandler");
+            calculateAndDisplayRoute(directionsDisplay, directionsService, markerArray, stepDisplay, map);
+        };
+        function initMap() {
+            markerArray = [];
+
+            // Instantiate a directions service.
+            directionsService = new google.maps.DirectionsService;
+
+            // Create a map and center it on Manhattan.
+            map = new google.maps.Map(document.getElementById('waymap'), {
+                zoom: 13,
+                center: { lat: 40.771, lng: -73.974 }
+            });
+
+            // Create a renderer for directions and bind it to the map.
+            directionsDisplay = new google.maps.DirectionsRenderer({ map: map });
+
+            // Instantiate an info window to hold step text.
+            stepDisplay = new google.maps.InfoWindow;
+            // Display the route between the initial start and end selections.
+            calculateAndDisplayRoute(
+                directionsDisplay, directionsService, markerArray, stepDisplay, map);
+            // Listen to change events from the start and end lists.
+            onChangeHandler = function () {
+                calculateAndDisplayRoute(
+                    directionsDisplay, directionsService, markerArray, stepDisplay, map);
+            };
+            document.getElementById('pac-input1').addEventListener('change', onChangeHandler);
+            document.getElementById('pac-input').addEventListener('change', onChangeHandler);
+        }
+
+        function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+            directionsService = new google.maps.DirectionsService;
+            directionsDisplay = new google.maps.DirectionsRenderer({ map: map });
+            console.log("^^^^^^^^^^" + directionsService.route);
+            directionsService.route({
+                origin: document.getElementById('pac-input1').value,
+                destination: document.getElementById('pac-input').value,
+                travelMode: google.maps.TravelMode.DRIVING
+            }, function (response, status) {
+                if (status === google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                    console.log(response);
+                }
+            });
+        }
+
+        //======================endway===========================
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?language=iw&key=AIzaSyDvY6TevHwhufZt_YspOUFWfOwy1qGnvks&libraries=places&callback=mapsinit" async defer></script>
+    <div style="height:100%;width:100%">
+        <input type="hidden" value="" id="valueLocFrom" style="background-color:aqua" ng-model="uc.suggest.valuef" />
+        <input type="hidden" value="" id="valueLocTo" style="background-color:aqua" ng-model="uc.suggest.valuet" />
+        <input type="hidden" value="" id="userPass" style="background-color:aqua" ng-model="uc.suggest.userPass" />
+        <div class="row">
+            <div class="col-xs-12">
+                <span class="header-font">אני נוסע\ת: </span>
+            </div>
+            <div class="col-xs-12">
+                <div style="display: block; float:right;"><input class="form-control" id="pac-input1" type="text" placeholder="מ:" ng-model="uc.suggest.from" required /></div>
+            </div>
+            <div class="col-xs-12">
+                <div style="display: block; float:right;"> <input class="form-control" id="pac-input" type="text" placeholder="ל:" ng-model="uc.suggest.to" required /></div>
+            </div>
+            <!--<div class="col-xs-12">
+                <div id="waymap" style="background-color:#ff6a00;display: block; margin-left: auto; margin-right: auto;height: 120px;"></div>
+            </div>-->
+          <div class="col-xs-12">
+            <div  class="input-append date form_datetime" data-date="2016-02-13T15:25:00Z">
+                <input  type="text" value="" placeholder="מתי?"  id="Text1" required ng-model="uc.suggest.when"  readonly >
+                <i class="glyphicon glyphicon-calendar header-font-min"></i>
+               
+                 <span class="header-font-min"></span>
+            <!--</div>
+            <div class="col-xs-12">
+                <div class="input-append date form_datetime" data-date="2016-02-13T15:25:00Z">
+                    <input type="text" value="" placeholder="מתי?" id="Text1" required ng-model="uc.suggest.when" readonly>-->
+                    <span class="add-on suggest-remove" style="color:transparent"><i class="icon-remove  glyphicon glyphicon-remove-circle font"></i>------</span>
+                    <span class="add-on" style="display:none;"><i class="icon-th glyphicon glyphicon-time font font"></i></span>
+                </div>
+                <script type="text/javascript">
+                    $(".form_datetime").datetimepicker({
+                        format: "dd-mm-yy hh:ii P",
+                        showMeridian: true,
+                        autoclose: true,
+                        todayBtn: true
+                    });
+                </script>
+            </div>
+            <div class="col-xs-12">
+                <div id="waymap" style="display: block; margin-left: auto; margin-right: auto;height: 120px;"></div>
+            </div>
+            <div class="col-xs-12" style="height:100px">
+            <button class="btn btn-default suggbtn animated pulse infinite" ng-click="uc.give()" ng-disabled="giveForm.$invalid">הוסף נסיעה</button>
+            </div>
+        </div>
+
+    </div>
+</form>

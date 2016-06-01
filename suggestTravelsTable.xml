@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<suggTravels>
+  <suggest when="17-02-16 09:30 AM" userPass="2222" toName="דרך יפו 50" toLat="32.06065269999999" toLen="34.77256740000007" fromName="דרך יפו 20" fromLat="32.0601589" fromLen="34.769156899999984" />
+  <suggest when="17-02-16 14:48 PM" userPass="123" toName="ירושלים" toLat="31.768319" toLen="35.21370999999999" fromName="תל אביב יפו" fromLat="32.0852999" fromLen="34.78176759999997" amount="1" />
+  <suggest when="17-02-16 09:30 AM" userPass="5555" toName="כותל המערבי" toLat="31.77671890000001" toLen="35.23450849999995" fromName="הרצליה" fromLat="32.162413" fromLen="34.84467500000005" amount="1" />
+  <suggest when="17-02-16 09:30 AM" userPass="123" toName="כפר סבא" toLat="32.178195" toLen="34.90760999999998" fromName="בני ברק" fromLat="32.084932" fromLen="34.835226000000034" amount="1" />
+  <suggest when="17-02-16 09:30 AM" userPass="789" toName="רעננה" toLat="32.184781" toLen="34.871325999999954" fromName="בני ברק" fromLat="32.084932" fromLen="34.835226000000034" amount="1" />
+  <suggest when="17-02-16 09:30 AM" userPass="123" toName="רמב&quot;ם" toLat="32.440951" toLen="34.912751999999955" fromName="הרצל" fromLat="32.4397202" fromLen="34.92001779999998" />
+  <suggest when="11-02-16 15:50 PM" userPass="1111" toName="ירושלים" toLat="31.768319" toLen="35.21370999999999" fromName="אלעד" fromLat="32.04953" fromLen="34.95074999999997" />
+  <suggest when="17-02-16 09:30 AM" userPass="yyyy" toName="ראשון לציון" toLat="31.9730015" toLen="34.792501300000026" fromName="באר יעקב" fromLat="31.943507" fromLen="34.83904000000007" />
+  <suggest when="17-02-16 09:30 AM" userPass="9999" toName="ירושלים" toLat="31.768319" toLen="35.21370999999999" fromName="תל אביב יפו" fromLat="32.0852999" fromLen="34.78176759999997" />
+  <suggest when="06-03-16 13:47 PM" userPass="5555" toName="Jerusalem District" toLat="31.7648243" toLen="34.99475099999995" fromName="Bnei Brak" fromLat="32.084932" fromLen="34.835226000000034" />
+  <suggest when="07-03-16 13:13 PM" userPass="1111" toName="Jerusalem District" toLat="31.7648243" toLen="34.99475099999995" fromName="Tel Aviv-Yafo" fromLat="32.0852999" fromLen="34.78176759999997" />
+  <suggest when="07-03-16 14:35 PM" userPass="123" toName="Jerusalem District" toLat="31.7648243" toLen="34.99475099999995" fromName="Tel Aviv-Yafo" fromLat="32.0852999" fromLen="34.78176759999997" />
+  <suggest when="07-03-16 15:04 PM" userPass="5555" toName="Ramat Gan" toLat="32.068424" toLen="34.82478500000002" fromName="Tel Aviv-Yafo" fromLat="32.0852999" fromLen="34.78176759999997" />
+  <suggest when="16-02-16 14:05 PM" userPass="123" toName="הגפן" toLat="32.0892336" toLen="34.81182709999996" fromName="ירושלים" fromLat="31.768319" fromLen="35.21370999999999" />
+  <suggest when="11-02-16 08:25 AM" userPass="123" toName="הכ&quot;ג" toLat="32.83167" toLen="34.977168000000006" fromName="ירושלים" fromLat="31.768319" fromLen="35.21370999999999" />
+</suggTravels>
